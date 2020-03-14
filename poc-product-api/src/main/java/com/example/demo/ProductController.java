@@ -5,9 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ProductDTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 public class ProductController {
@@ -24,4 +27,8 @@ public class ProductController {
         return productService.getProductListByPrdNm(prdNm);
     }
 	
+    @PostMapping("/product")
+    public List<ProductDTO> getProductListbyPrdSeqList(@RequestBody List<String> prdSeqList) throws JsonProcessingException {
+    	return productService.getProductListbyPrdSeqList(prdSeqList);
+    }
 }

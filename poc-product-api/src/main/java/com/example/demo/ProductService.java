@@ -8,5 +8,6 @@ public interface ProductService {
 	
 	public ProductDTO getProductListByPrdSeq(String prdSeq);
 	public List<ProductDTO> getProductListByPrdNm(String prdNm);
+	public List<ProductDTO> getProductListbyPrdSeqList(List<String> prdSeqList);
 
 }
